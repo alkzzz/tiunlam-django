@@ -1,0 +1,9 @@
+{% extends "homepage/index.html" %} {% load staticfiles %}
+
+{% block slider %} {% endblock slider %}
+
+{% block content %}
+<img src="{{ MEDIA_URL }}{{ berita.gambar }}" />
+<h3>{{ berita.judul }}</h3>
+{{ berita.isi|safe }} 
+{% endblock content %}

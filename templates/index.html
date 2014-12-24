@@ -1,0 +1,52 @@
+{% extends "_layouts/base.html" %} {% load staticfiles %}
+
+{% block title %} 
+Selamat Datang di Website Teknologi Informasi Universitas Lambung Mangkurat 
+{% endblock title %}
+
+{% block menu %}
+<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profil <span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+    {% for profil in daftar_profil %}
+        <li><a href="{{ profil.get_absolute_url }}">{{ profil.judul }}</a></li>
+    {% endfor %}
+    </ul>
+<li><a href="#">About</a></li>
+</li>
+{% endblock menu %}
+
+{% block content %} 
+
+<h1>Diisi konten :) </h1>
+{% endblock content %}
+
+{% block footer %}
+<div class="row">
+<div class="col-md-2">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-4">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-4">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-2">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+</div>
+{% endblock footer %}

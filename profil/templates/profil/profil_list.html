@@ -1,0 +1,8 @@
+<h1>Profil</h1>
+<ul>
+{% for profil in object_list %}
+    <li>{{ profil.judul }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+<h1>Berita</h1>
+<ul>
+{% for berita in object_list %}
+    <li>{{ berita.judul }}</li>
+    <li>{{ berita.isi|safe }} </li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

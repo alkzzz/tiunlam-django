@@ -1,0 +1,100 @@
+{% extends "_layouts/base.html" %} {% load staticfiles %} {% load get_range %}
+
+{% block title %} 
+Selamat Datang di Website Teknologi Informasi Universitas Lambung Mangkurat 
+{% endblock title %}
+
+{% block menu %}
+<li class="active"><a href="/">Home<span class="sr-only">(current)</span> </a></li>
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profil<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+    {% for profil in daftar_profil %}
+        <li><a href="{{ profil.get_absolute_url }}">{{ profil.judul }}</a></li>
+    {% endfor %}
+    </ul>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Akademik<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+        <li><a href="/">Akademik Dropdown 1</a></li>
+        <li><a href="/">Akademik Dropdown 2</a></li>
+        <li><a href="/">Akademik Dropdown 3</a></li>
+      </ul>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Staff<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+        <li><a href="/">Staff Dropdown 1</a></li>
+        <li><a href="/">Staff Dropdown 2</a></li>
+        <li><a href="/">Staff Dropdown 3</a></li>
+     </ul>
+<li><a href="#">Kontak</a></li>
+</li>
+{% endblock menu %}
+
+
+{% block slider %}     
+<div class="row">
+  <div class="col-md-8">
+    <div class="slider-wrapper theme-dark">       
+      <div id="slider" class="nivoSlider">  
+        {% for berita in daftar_berita %}
+        <a href="{{ berita.get_absolute_url }}" ><img src="{{ MEDIA_URL }}{{ berita.gambar }}" data-thumb="{{ MEDIA_URL }}{{ berita.gambar }}" alt="" title="#{{ berita.slug }}" />  
+        {% endfor %}
+      </div>
+      {% for berita in daftar_berita %}
+      <div id="{{ berita.slug }}" class="nivo-html-caption">
+        <a href="{{ berita.get_absolute_url }}">{{ berita.judul }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div> 
+
+{% block daftar_berita %}
+  <div class="col-md-4">
+     {% for berita in berita_terbaru %}
+     <h4> {{ berita.judul }} </h4>
+     {{ berita.isi|safe|truncatewords:20 }} <a href="{{ berita.get_absolute_url }}" style="color: #22ccff" >Read more</a>
+      {% endfor %}
+  </div>
+{% endblock daftar_berita %}
+</div>
+{% endblock slider %}
+
+
+
+</div> <!-- end row -->
+
+{% block content %}
+<h1> ini konten </h1>
+{% endblock content %}
+
+{% block footer %}
+<footer
+<div class="row">
+<div class="col-md-3" style="border-right: 1px #555 solid">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-3" style="border-right: 1px #555 solid">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-3" style="border-right: 1px #555 solid">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+<div class="col-md-" style="border-right: 1px #555 solid">
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+<h5> Ini diisi footer Ini diisi footer</h5>
+</div>
+</div>
+</footer>
+{% endblock footer %}
