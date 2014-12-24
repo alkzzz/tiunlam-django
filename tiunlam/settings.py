@@ -15,7 +15,7 @@ import dj_database_url
 
 from unipath import Path
 
-#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 PROJECT_DIR = Path(__file__).ancestor(2)
 
@@ -70,21 +70,11 @@ WSGI_APPLICATION = 'tiunlam.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_ti',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-'''
-#DATABASES = {'default': dj_database_url.config(default='postgres://root:root@localhost/web_ti')}
 
 DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+
+# Parse database configuration from $DATABASE_URL
+DATABASES['default'] =  dj_database_url.config()
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
@@ -117,11 +107,11 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = PROJECT_DIR.child("media")
 
-#STATIC_ROOT = PROJECT_DIR.child("static")
+STATIC_ROOT = PROJECT_DIR.child("static")
 
-#STATICFILES_DIRS = (
-#PROJECT_DIR.child("assets"),
-#)
+STATICFILES_DIRS = (
+PROJECT_DIR.child("assets"),
+)
 
 TEMPLATE_DIRS = (
 PROJECT_DIR.child("templates"),
@@ -135,20 +125,8 @@ CKEDITOR_JQUERY_URL = '/static/js/jquery.min.js'
 
 GRAPPELLI_ADMIN_TITLE = "TI UNLAM"
 
-# Parse database configuration from $DATABASE_URL
-#DATABASES['default'] =  dj_database_url.config()
-
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
-
-# Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
