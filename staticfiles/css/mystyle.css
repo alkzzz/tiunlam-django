@@ -22,7 +22,7 @@ h3 {
 }
 
 p {
-  color: #999
+  color: #ccc;
 }
 
 h4 {
@@ -83,13 +83,14 @@ img {
 
 .konten {
   height: 100%;
-  background-color: #353535;
+  background-color: #333;
   min-height: 600px;
   padding: 30px;
 }
 
 .konten > p {
   font-size: 14px;
+  text-align: justify;
 }
 
 .konten > h1 {
