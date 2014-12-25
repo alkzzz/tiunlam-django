@@ -1,5 +1,4 @@
 Django==1.7.1
-MySQL-python==1.2.5
 Pillow==2.6.1
 Unipath==1.0
 argparse==1.2.1
@@ -12,4 +11,5 @@ gunicorn==19.1.1
 ipython==2.3.1
 psycopg2==2.5.4
 static3==0.5.1
+whitenoise==1.0.6
 wsgiref==0.1.2

@@ -15,7 +15,7 @@ import dj_database_url
 
 from unipath import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 PROJECT_DIR = Path(__file__).ancestor(2)
 
@@ -101,17 +101,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = PROJECT_DIR.child("media")
 
-STATIC_ROOT = PROJECT_DIR.child("static")
+#STATIC_ROOT = PROJECT_DIR.child("static")
 
-STATICFILES_DIRS = (
-PROJECT_DIR.child("assets"),
-)
+#STATICFILES_DIRS = (
+#PROJECT_DIR.child("assets"),
+#)
 
 TEMPLATE_DIRS = (
 PROJECT_DIR.child("templates"),
