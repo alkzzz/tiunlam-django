@@ -112,6 +112,7 @@ img {
 
 .footer > .container {
   background-color: black;
+  min-height: 100px;
 }
 
 @font-face {

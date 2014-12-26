@@ -7,7 +7,7 @@ from customwidget import AdvancedClearableFileInput, AdvancedFileInput
 # Register your models here.
 class AdminBerita(admin.ModelAdmin):
 
-	prepopulated_fields = {'slug':('judul',)}
+	fields = ('judul', 'isi', 'featured', 'gambar', 'dokumen')
 
 	formfield_overrides = {
     models.FileField: {'widget': AdvancedFileInput},
