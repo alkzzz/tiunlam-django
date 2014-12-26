@@ -23,6 +23,7 @@ h3 {
 
 p {
   color: #ccc;
+  text-align: justify;
 }
 
 h4 {
@@ -90,7 +91,6 @@ img {
 
 .konten > p {
   font-size: 14px;
-  text-align: justify;
 }
 
 .konten > h1 {
