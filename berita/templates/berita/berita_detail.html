@@ -3,7 +3,7 @@
 {% block slider %} {% endblock slider %}
 
 {% block content %}
-<img src="{{ MEDIA_URL }}{{ berita.gambar }}" />
 <h3>{{ berita.judul }}</h3>
+<img src="{{ MEDIA_URL }}{{ berita.gambar }}" />
 {{ berita.isi|safe }} 
 {% endblock content %}

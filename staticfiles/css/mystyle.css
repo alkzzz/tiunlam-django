@@ -22,9 +22,14 @@ h3 {
 }
 
 p {
+<<<<<<< HEAD
   color: #eee;
   text-align: justify;
   padding-right: 30px;
+=======
+  color: #ccc;
+  text-align: justify;
+>>>>>>> c927876430355a982ce86a5700b3ec725f441377
 }
 
 h4 {
@@ -87,12 +92,16 @@ img {
   height: 100%;
   background-color: #111;
   min-height: 600px;
-  padding: 30px;
+  padding: 10px 50px 50px 50px;
 }
 
 .konten > p {
+  margin-top: 30px;
   font-size: 14px;
+<<<<<<< HEAD
   padding: 0px;
+=======
+>>>>>>> c927876430355a982ce86a5700b3ec725f441377
 }
 
 .konten > h1 {
@@ -133,6 +142,7 @@ img {
 
 .footer > .container {
   background-color: black;
+  padding: 30px;
 }
 
 @font-face {
