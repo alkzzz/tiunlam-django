@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     #ThirdPartyApp
     'PIL',
     'ckeditor',
+    'pagination',
     #App
     'homepage',
     'berita',
@@ -61,6 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'tiunlam.urls'

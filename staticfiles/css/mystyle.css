@@ -22,7 +22,9 @@ h3 {
 }
 
 p {
-  color: #ccc;
+  color: #eee;
+  text-align: justify;
+  padding-right: 30px;
 }
 
 h4 {
@@ -83,18 +85,22 @@ img {
 
 .konten {
   height: 100%;
-  background-color: #333;
+  background-color: #111;
   min-height: 600px;
   padding: 30px;
 }
 
 .konten > p {
   font-size: 14px;
-  text-align: justify;
+  padding: 0px;
 }
 
 .konten > h1 {
   text-align: center;
+}
+
+.konten a {
+  color: #22CCFF;
 }
 
 .konten > img {
@@ -102,6 +108,20 @@ img {
   margin: auto;
   width: 800px;
   height: 300px;
+}
+
+.pagination > li > a {
+  color: #333;
+}
+
+.pagination > .active > a {
+  color: #333;
+  background-color: #22ccff;
+}
+
+.pagination > .active > a:hover {
+  color: #333;
+  background-color: #22ccff;
 }
 
 .footer {

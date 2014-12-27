@@ -1,6 +1,5 @@
 from django.views import generic
 from berita.models import Berita
-
 from profil.models import Profil
 
 class DaftarBerita(generic.ListView):

@@ -1,9 +1,19 @@
+{% extends "homepage/index.html" %} {% load staticfiles %} {% load pagination_tags %}
+
+{% block slider %} {% endblock slider %}
+
+{% block content %}
 <h1>Berita</h1>
-<ul>
+<ol>
+{% autopaginate object_list 5 %}
 {% for berita in object_list %}
-    <li>{{ berita.judul }}</li>
-    <li>{{ berita.isi|safe }} </li>
+    <h3> <a href="{{ berita.absolute_url }}"> {{ berita.judul }}</a></h3>
+    {{ berita.isi|safe|truncatewords:50 }} <a href="">Read More</a>
 {% empty %}
-    <li>No articles yet.</li>
+    <h3>Tidak ada berita yang dapat ditampilkan.</h3>
 {% endfor %}
-</ul>
+
+{% paginate %}
+
+
+{% endblock content %}
