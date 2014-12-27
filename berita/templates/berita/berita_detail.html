@@ -4,6 +4,9 @@
 
 {% block content %}
 <h3>{{ berita.judul }}</h3>
-<img src="{{ MEDIA_URL }}{{ berita.gambar }}" />
+<div class="container-fluid">
+	<img src="{{ MEDIA_URL }}{{ berita.gambar }}" class="img-responsive">
+</div>
+
 {{ berita.isi|safe }} 
 {% endblock content %}
