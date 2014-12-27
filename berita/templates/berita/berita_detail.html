@@ -4,9 +4,10 @@
 
 {% block content %}
 <h3>{{ berita.judul }}</h3>
+{% if berita.gambar %}
 <div class="container-fluid" style="padding: 0px">
 	<img src="{{ MEDIA_URL }}{{ berita.gambar }}" class="img-responsive">
 </div>
-
+{% endif %}
 {{ berita.isi|safe }} 
 {% endblock content %}
