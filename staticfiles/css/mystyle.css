@@ -17,26 +17,18 @@ h1 {
   color: white;
 }
 
-h3 {
+h3, h4 {
+  color: #22CCFF;
+}
+
+a {
   color: #22CCFF;
 }
 
 p {
-<<<<<<< HEAD
   color: #eee;
   text-align: justify;
   padding-right: 30px;
-=======
-  color: #ccc;
-  text-align: justify;
-<<<<<<< HEAD
->>>>>>> c927876430355a982ce86a5700b3ec725f441377
-=======
->>>>>>> c927876430355a982ce86a5700b3ec725f441377
-}
-
-h4 {
-  color: #22ccff;
 }
 
 h5 {
@@ -98,24 +90,18 @@ img {
   padding: 10px 50px 50px 50px;
 }
 
+.konten p > a {
+  color: #22CCFF;
+}
+
 .konten > p {
   margin-top: 30px;
   font-size: 14px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   padding: 0px;
-=======
->>>>>>> c927876430355a982ce86a5700b3ec725f441377
-=======
->>>>>>> c927876430355a982ce86a5700b3ec725f441377
 }
 
 .konten > h1 {
   text-align: center;
-}
-
-.konten a {
-  color: #22CCFF;
 }
 
 .konten > img {

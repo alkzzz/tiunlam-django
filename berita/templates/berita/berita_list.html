@@ -4,11 +4,10 @@
 
 {% block content %}
 <h1>Berita</h1>
-<ol>
 {% autopaginate object_list 5 %}
 {% for berita in object_list %}
-    <h3> <a href="{{ berita.absolute_url }}"> {{ berita.judul }}</a></h3>
-    {{ berita.isi|safe|truncatewords:50 }} <a href="">Read More</a>
+    <h3> {{ berita.judul }}</a></h3>
+    {{ berita.isi|safe|truncatewords:50 }} <a href="/berita/{{ berita.judul|slugify }}">Read More</a>
 {% empty %}
     <h3>Tidak ada berita yang dapat ditampilkan.</h3>
 {% endfor %}
