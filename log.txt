@@ -1,0 +1,101 @@
+2014-12-28T06:57:31.535672+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2014-12-28T06:57:31.535660+00:00 app[web.1]:     module = import_module(entry)
+2014-12-28T06:57:31.535683+00:00 app[web.1]:   File "/app/tiunlam/wsgi.py", line 16, in <module>
+2014-12-28T06:57:31.535690+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/registry.py", line 85, in populate
+2014-12-28T06:57:31.535677+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2014-12-28T06:57:31.535685+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+2014-12-28T06:57:31.535687+00:00 app[web.1]:     django.setup()
+2014-12-28T06:57:31.535676+00:00 app[web.1]:     return self.load_wsgiapp()
+2014-12-28T06:57:31.535684+00:00 app[web.1]:     application = get_wsgi_application()
+2014-12-28T06:57:31.535694+00:00 app[web.1]:     module = import_module(entry)
+2014-12-28T06:57:31.535696+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/importlib/__init__.py", line 37, in import_module
+2014-12-28T06:57:31.535698+00:00 app[web.1]: ImportError: No module named haystack
+2014-12-28T06:57:31.535681+00:00 app[web.1]:     __import__(module)
+2014-12-28T06:57:31.535680+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2014-12-28T06:57:31.535689+00:00 app[web.1]:     apps.populate(settings.INSTALLED_APPS)
+2014-12-28T06:57:31.535692+00:00 app[web.1]:     app_config = AppConfig.create(entry)
+2014-12-28T06:57:31.535693+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/config.py", line 87, in create
+2014-12-28T06:57:31.535697+00:00 app[web.1]:     __import__(name)
+2014-12-28T06:57:31.535688+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/__init__.py", line 21, in setup
+2014-12-28T06:57:31.535729+00:00 app[web.1]: [2014-12-28 14:57:31 +0000] [7] [INFO] Worker exiting (pid: 7)
+2014-12-28T06:57:31.667269+00:00 app[web.1]: [2014-12-28 06:57:31 +0000] [2] [INFO] Shutting down: Master
+2014-12-28T06:57:31.667524+00:00 app[web.1]: [2014-12-28 06:57:31 +0000] [2] [INFO] Reason: Worker failed to boot.
+2014-12-28T06:57:32.501780+00:00 heroku[web.1]: State changed from starting to crashed
+2014-12-28T06:57:32.502426+00:00 heroku[web.1]: State changed from crashed to starting
+2014-12-28T06:57:32.488499+00:00 heroku[web.1]: Process exited with status 3
+2014-12-28T06:57:38.113988+00:00 heroku[web.1]: Starting process with command `gunicorn tiunlam.wsgi --log-file -`
+2014-12-28T06:57:39.029252+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [2] [INFO] Starting gunicorn 19.1.1
+2014-12-28T06:57:39.224091+00:00 app[web.1]: [2014-12-28 14:57:39 +0000] [7] [ERROR] Exception in worker process:
+2014-12-28T06:57:39.224096+00:00 app[web.1]: Traceback (most recent call last):
+2014-12-28T06:57:39.224098+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2014-12-28T06:57:39.224100+00:00 app[web.1]:     worker.init_process()
+2014-12-28T06:57:39.224102+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2014-12-28T06:57:39.224103+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2014-12-28T06:57:39.224105+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2014-12-28T06:57:39.224114+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2014-12-28T06:57:39.224107+00:00 app[web.1]:     self.callable = self.load()
+2014-12-28T06:57:39.224110+00:00 app[web.1]:     return self.load_wsgiapp()
+2014-12-28T06:57:39.224111+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2014-12-28T06:57:39.224116+00:00 app[web.1]:     __import__(module)
+2014-12-28T06:57:39.224117+00:00 app[web.1]:   File "/app/tiunlam/wsgi.py", line 16, in <module>
+2014-12-28T06:57:39.224108+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2014-12-28T06:57:39.224119+00:00 app[web.1]:     application = get_wsgi_application()
+2014-12-28T06:57:39.224113+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2014-12-28T06:57:39.224120+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+2014-12-28T06:57:39.224125+00:00 app[web.1]:     apps.populate(settings.INSTALLED_APPS)
+2014-12-28T06:57:39.224122+00:00 app[web.1]:     django.setup()
+2014-12-28T06:57:39.224123+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/__init__.py", line 21, in setup
+2014-12-28T06:57:39.224128+00:00 app[web.1]:     app_config = AppConfig.create(entry)
+2014-12-28T06:57:39.224131+00:00 app[web.1]:     module = import_module(entry)
+2014-12-28T06:57:39.224127+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/registry.py", line 85, in populate
+2014-12-28T06:57:39.224129+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/config.py", line 87, in create
+2014-12-28T06:57:39.224135+00:00 app[web.1]: ImportError: No module named haystack
+2014-12-28T06:57:39.224136+00:00 app[web.1]: Traceback (most recent call last):
+2014-12-28T06:57:39.224138+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+2014-12-28T06:57:39.224132+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/importlib/__init__.py", line 37, in import_module
+2014-12-28T06:57:39.224134+00:00 app[web.1]:     __import__(name)
+2014-12-28T06:57:39.224139+00:00 app[web.1]:     worker.init_process()
+2014-12-28T06:57:39.224140+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+2014-12-28T06:57:39.224142+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2014-12-28T06:57:39.224143+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+2014-12-28T06:57:39.224145+00:00 app[web.1]:     self.callable = self.load()
+2014-12-28T06:57:39.224146+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2014-12-28T06:57:39.224151+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+2014-12-28T06:57:39.224156+00:00 app[web.1]:     application = get_wsgi_application()
+2014-12-28T06:57:39.224147+00:00 app[web.1]:     return self.load_wsgiapp()
+2014-12-28T06:57:39.030071+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [2] [INFO] Listening at: http://0.0.0.0:26813 (2)
+2014-12-28T06:57:39.224149+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2014-12-28T06:57:39.224154+00:00 app[web.1]:   File "/app/tiunlam/wsgi.py", line 16, in <module>
+2014-12-28T06:57:39.224150+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2014-12-28T06:57:39.224153+00:00 app[web.1]:     __import__(module)
+2014-12-28T06:57:39.224157+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+2014-12-28T06:57:39.224158+00:00 app[web.1]:     django.setup()
+2014-12-28T06:57:39.224160+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/__init__.py", line 21, in setup
+2014-12-28T06:57:39.224161+00:00 app[web.1]:     apps.populate(settings.INSTALLED_APPS)
+2014-12-28T06:57:39.224162+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/registry.py", line 85, in populate
+2014-12-28T06:57:39.030152+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [2] [INFO] Using worker: sync
+2014-12-28T06:57:39.039735+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [7] [INFO] Booting worker with pid: 7
+2014-12-28T06:57:39.224166+00:00 app[web.1]:     module = import_module(entry)
+2014-12-28T06:57:39.224165+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/apps/config.py", line 87, in create
+2014-12-28T06:57:39.224169+00:00 app[web.1]:     __import__(name)
+2014-12-28T06:57:39.224170+00:00 app[web.1]: ImportError: No module named haystack
+2014-12-28T06:57:39.224176+00:00 app[web.1]: [2014-12-28 14:57:39 +0000] [7] [INFO] Worker exiting (pid: 7)
+2014-12-28T06:57:39.224164+00:00 app[web.1]:     app_config = AppConfig.create(entry)
+2014-12-28T06:57:39.224168+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/importlib/__init__.py", line 37, in import_module
+2014-12-28T06:57:39.351257+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [2] [INFO] Shutting down: Master
+2014-12-28T06:57:39.351663+00:00 app[web.1]: [2014-12-28 06:57:39 +0000] [2] [INFO] Reason: Worker failed to boot.
+2014-12-28T06:57:40.183816+00:00 heroku[web.1]: Process exited with status 3
+2014-12-28T06:57:40.203346+00:00 heroku[web.1]: State changed from starting to crashed
+2014-12-28T06:57:43.190185+00:00 heroku[api]: Starting process with command `python pip install django-elasticsearch` by m.alkaff9@gmail.com
+2014-12-28T06:57:51.629919+00:00 heroku[run.4658]: Awaiting client
+2014-12-28T06:57:51.684613+00:00 heroku[run.4658]: Starting process with command `python pip install django-elasticsearch`
+2014-12-28T06:57:51.985974+00:00 heroku[run.4658]: State changed from starting to up
+2014-12-28T06:57:52.860202+00:00 heroku[run.4658]: Process exited with status 2
+2014-12-28T06:57:52.870590+00:00 heroku[run.4658]: State changed from up to complete
+2014-12-28T06:58:01.898155+00:00 heroku[api]: Starting process with command `pip install django-elasticsearch` by m.alkaff9@gmail.com
+2014-12-28T06:58:07.212445+00:00 heroku[run.5870]: Awaiting client
+2014-12-28T06:58:07.243765+00:00 heroku[run.5870]: Starting process with command `pip install django-elasticsearch`
+2014-12-28T06:58:07.499484+00:00 heroku[run.5870]: State changed from starting to up
+2014-12-28T06:58:19.455786+00:00 heroku[run.5870]: Process exited with status 1
+2014-12-28T06:58:19.468630+00:00 heroku[run.5870]: State changed from up to complete
+2014-12-28T06:59:53.179090+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=floating-refuge-7268.herokuapp.com request_id=a25bfd8d-6ef9-4819-86a5-c53fbae00162 fwd="180.246.151.32" dyno= connect= service= status=503 bytes=
