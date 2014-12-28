@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>Berita</h1>
-{% autopaginate object_list 5 %}
+{% autopaginate page.object_list 4 %}
 {% for berita in object_list %}
     <h3> {{ berita.judul }}</a></h3>
     {{ berita.isi|safe|truncatewords:50 }} <a href="/berita/{{ berita.judul|slugify }}">Read More</a>

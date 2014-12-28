@@ -1,6 +1,4 @@
-from django.shortcuts import render, render_to_response, RequestContext
-from django.views import generic
-from django.db.models import Max
+from django.shortcuts import render
 from profil.models import Profil
 from berita.models import Berita
 
@@ -18,3 +16,5 @@ def home(request, *args, **kwargs):
 
     }
     return render(request, 'homepage/index.html', context)
+
+    

@@ -2,10 +2,12 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from homepage.customsearch import CustomSearchView
 
 urlpatterns = patterns('',
 	url(r'^$', include('homepage.urls', namespace="homepage")),
-	url(r'^search/', include('haystack.urls')),
+	#url(r'^search/', include('haystack.urls')),
+	url(r'^search/', CustomSearchView(), name="search"),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^berita/', include('berita.urls', namespace="berita")),
     url(r'^profil/', include('profil.urls', namespace="profil")),
