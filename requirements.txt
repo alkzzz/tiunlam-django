@@ -10,10 +10,12 @@ django-grappelli==2.6.3
 django-haystack==2.3.1
 django-pagination==1.0.7
 django-toolbelt==0.0.1
+elasticsearch==1.2.0
 gunicorn==19.1.1
 ipython==2.3.1
 psycopg2==2.5.4
 pyes==0.99.5
+requests==2.5.1
 six==1.8.0
 static3==0.5.1
 urllib3==1.10
