@@ -8,6 +8,7 @@ class DaftarBerita(generic.ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(DaftarBerita, self).get_context_data(**kwargs)
+		context['daftar_profil'] = Profil.objects.order_by('created')
 		return context	
 
 class DetailBerita(generic.DetailView):
