@@ -10,10 +10,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 import dj_database_url
-
 from unipath import Path
+from urlparse import urlparse
 
 #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -47,6 +46,7 @@ INSTALLED_APPS = (
     #ThirdPartyApp
     'PIL',
     'ckeditor',
+    'haystack',
     'pagination',
     #App
     'homepage',
@@ -116,6 +116,24 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+# Haystack Search with ElasticSearch
+
+es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://localhost:9200/')
+
+port = es.port or 80
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': es.scheme + '://' + es.hostname + ':' + str(port),
+        'INDEX_NAME': 'documents',
+    },
+}
+
+if es.username:
+    HAYSTACK_CONNECTIONS['default']['KWARGS'] = {"http_auth": es.username + ':' + es.password}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 MEDIA_URL = '/media/'
 

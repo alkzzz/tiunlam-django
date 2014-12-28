@@ -21,6 +21,10 @@ h3 {
   color: #22CCFF;
 }
 
+a, a:hover {
+  color: #22CCFF;
+}
+
 p {
   color: #999
 }

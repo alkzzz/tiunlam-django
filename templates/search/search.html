@@ -1,0 +1,14 @@
+{% extends "homepage/index.html" %} {% load staticfiles %}
+
+{% block slider %} {% endblock slider %}
+
+{% block content %}
+<h1>Hasil Pencarian</h1>
+{% for result in page.object_list %}
+   <h3>{{ result.object.judul }}</h3>
+   {{ result.object.isi|safe|truncatewords:50 }} <a href="/berita/{{ berita.judul|slugify }}">Read More</a>
+{% empty %}
+   <p>Pencarian tidak ditemukan.</p>
+{% endfor %}
+
+{% endblock content %}

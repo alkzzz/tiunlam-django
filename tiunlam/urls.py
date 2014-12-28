@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('',
 	url(r'^$', include('homepage.urls', namespace="homepage")),
+	url(r'^search/', include('haystack.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^berita/', include('berita.urls', namespace="berita")),
     url(r'^profil/', include('profil.urls', namespace="profil")),

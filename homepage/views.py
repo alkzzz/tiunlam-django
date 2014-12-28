@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, RequestContext
 from django.views import generic
 from django.db.models import Max
 from profil.models import Profil
